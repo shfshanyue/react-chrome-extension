@@ -2,8 +2,8 @@ const CopyPlugin = require('copy-webpack-plugin')
 
 module.exports = {
   entry: {
-    options: './src/options.tsx',
-    popup: './src/popup.tsx',
+    options: './pages/options.tsx',
+    popup: './pages/popup.tsx',
   },
   output: {
     filename: 'assets/[name].js',
@@ -11,6 +11,9 @@ module.exports = {
   },
   mode: 'development',
   devtool: 'inline-source-map',
+  resolve: {
+    extensions: ['.js', '.json', '.wasm', '.tsx'],
+  },
   module: {
     rules: [
       {
