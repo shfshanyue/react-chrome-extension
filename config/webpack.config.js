@@ -9,8 +9,6 @@ module.exports = {
     filename: 'assets/[name].js',
     clean: true
   },
-  mode: 'development',
-  devtool: 'inline-source-map',
   resolve: {
     extensions: ['.js', '.json', '.wasm', '.tsx'],
   },
