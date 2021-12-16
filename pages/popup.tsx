@@ -14,10 +14,10 @@ function Popup() {
         <span className="font-mono">Author: </span><span>山月</span>
       </small>
       <Counter />
-      <div>
+      <header>
         <span className="font-mono">Github: </span>
         <a href="https://github.com/shfshanyue/react-chrome-extension">react-chrome-extension</a>
-      </div>
+      </header>
     </div>
   )
 }
