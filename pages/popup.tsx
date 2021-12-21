@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Counter from '../components/counter'
+import BackgroundColorPicker from '../components/background-color-picker'
 
 import './index.css'
 
@@ -14,6 +15,7 @@ function Popup() {
         <span className="font-mono">Author: </span><span>山月</span>
       </small>
       <Counter />
+      <BackgroundColorPicker />
       <header>
         <span className="font-mono">Github: </span>
         <a href="https://github.com/shfshanyue/react-chrome-extension">react-chrome-extension</a>

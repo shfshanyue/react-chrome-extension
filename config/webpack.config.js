@@ -4,6 +4,7 @@ module.exports = {
   entry: {
     options: './pages/options.tsx',
     popup: './pages/popup.tsx',
+    content_script: './pages/content_script.ts',
   },
   output: {
     filename: 'assets/[name].js',

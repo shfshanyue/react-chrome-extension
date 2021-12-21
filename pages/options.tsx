@@ -5,33 +5,32 @@ import classNames from 'classnames'
 import './index.css'
 
 function Options() {
-  const [backgroundColorName, setBackgroundColorName] = useState<string>('')
+  const [color, setColor] = useState<string>('')
 
   useEffect(() => {
-    if (backgroundColorName) {
+    if (color) {
       chrome.storage.sync.set({
-        backgroundColorName
+        color
       })
     }
-  }, [backgroundColorName])
+  }, [color])
 
   useEffect(() => {
     chrome.storage.sync.get({
-      backgroundColorName: 'bg-gray-50'
-    }).then(({ backgroundColorName }) => {
-      setBackgroundColorName(backgroundColorName)
+      color: 'bg-gray-50'
+    }).then(({ color }) => {
+      setColor(color)
     })
   }, [])
 
-  const names = [
-    'bg-gray-50',
-    'bg-gray-100',
-    'bg-green-50',
-    'bg-green-100',
-    'bg-red-50',
-    'bg-red-100',
-    'bg-blue-50',
-    'bg-blue-100',
+  const colors= [
+    'snow',
+    'azure',
+    'whitesmoke',
+    'lightyellow',
+    'lightcyan',
+    'lightblue',
+    'lightgreen',
   ]
 
   return (
@@ -41,12 +40,15 @@ function Options() {
       </h1>
       <div className="flex gap-4">
         {
-          names.map(name => (
+          colors.map(name => (
             <div
               key={name}
-              className={classNames(name, name === backgroundColorName ? 'ring-2 ring-orange-400' : '', 'cursor-pointer shadow rounded w-16 h-16')}
+              className={classNames(name === color ? 'ring-2 ring-orange-400' : '', 'cursor-pointer shadow rounded w-16 h-16')}
+              style={{
+                backgroundColor: name
+              }}
               onClick={() => {
-                setBackgroundColorName(name)
+                setColor(name)
               }}
             >
         
