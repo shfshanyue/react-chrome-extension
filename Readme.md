@@ -6,3 +6,6 @@
 + Typescript
 + Webpack
 + Tailwind
+
+## Get Started
+
